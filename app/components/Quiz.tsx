@@ -1,10 +1,15 @@
 "use client";
-// components/Quiz.tsx
 import React from "react";
 import { Question } from "./Question";
 
+interface QuestionType {
+  question: string;
+  options: string[];
+  correctAnswer: string;
+}
+
 interface QuizProps {
-  questions: { question: string; options: string[]; correctAnswer: string }[];
+  questions: QuestionType[]; // Use the defined type here
 }
 
 interface QuizState {

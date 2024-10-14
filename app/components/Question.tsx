@@ -1,5 +1,4 @@
-// components/Question.tsx
-import React from 'react';
+import React from "react";
 
 interface QuestionProps {
   questionText: string;
@@ -13,12 +12,12 @@ export class Question extends React.Component<QuestionProps> {
   handleOptionClick = (option: string) => {
     const { correctAnswer, onAnswer } = this.props;
     onAnswer(option);
-    
+
     // Show alert for correct or wrong answer
     if (option === correctAnswer) {
-      alert('Correct!');
+      alert("Correct!");
     } else {
-      alert('Wrong!');
+      alert("Wrong!");
     }
   };
 
@@ -32,7 +31,11 @@ export class Question extends React.Component<QuestionProps> {
           {options.map((option, index) => (
             <li key={index} className="my-1">
               <button
-                className={`p-2 w-full text-left rounded ${disabled ? 'bg-gray-300' : 'bg-blue-500 text-white hover:bg-blue-700'}`}
+                className={`p-2 w-full text-left rounded ${
+                  disabled
+                    ? "bg-gray-300"
+                    : "bg-blue-500 text-white hover:bg-blue-700"
+                }`}
                 onClick={() => !disabled && this.handleOptionClick(option)}
                 disabled={disabled}
               >
